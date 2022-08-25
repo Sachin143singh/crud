@@ -1,0 +1,41 @@
+{{ define "Index" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    
+    
+    <div class="container">
+    <h2 class="text-center">  Database </h2>
+    <table border="1" class="table table-striped mt-4">
+    
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>City</th>
+        <th>View</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+       </thead>
+       <tbody>
+    {{ range . }}
+      <tr>
+        <td>{{ .Id }}</td>
+        <td> {{ .Name }} </td>
+        <td>{{ .City }} </td> 
+        <td><a href="/show?id={{ .Id }}"><button type="button" class="btn btn-primary">View</button>
+        </a></td>
+        <td><a href="/edit?id={{ .Id }}"><button type="button" class="btn btn-success">Edit</button>
+        </a></td>
+        <td><a href="/delete?id={{ .Id }}"><button type="button" class="btn btn-danger">Delete</button>
+        </a><td>
+      </tr>
+    {{ end }}
+       </tbody>
+    </table>
+    </div>
+
+
+    
+  {{ template "Footer" }}
+{{ end }}

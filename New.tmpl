@@ -1,0 +1,22 @@
+{{ define "New" }}
+  {{ template "Header" }}
+    {{ template "Menu" }} 
+    <div class="container">
+   <h2 class="text-center">New User</h2>  
+    <form method="POST" action="insert" mt-4>
+    
+      <div class="mb-3">
+        <label for="exampleInputName1" class="form-label">Name</label>
+        <input type="text" class="form-control" id="exampleInputName1" name="name" aria-describedby="nameHelp">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputCity1" class="form-label">City</label>
+        <input type="text" class="form-control" name="city" id="exampleInputCity1">
+      </div>
+ 
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      </div>
+    
+  {{ template "Footer" }}
+{{ end }}
